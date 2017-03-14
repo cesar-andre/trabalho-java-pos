@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Sistema Eleições</ui:insert></title>
+	<h:outputStylesheet library="css" name="sistema.css" />
+	<ui:insert name="head" />
+</h:head>
+
+<h:body>
+	<header>
+		<div>
+			<h:outputText value="Eleições" style="font-size: 25px;" />
+		</div>
+	</header>
+
+	<div class="ui-g">
+		<div class="ui-g-3">
+			<p:menu>
+			<p:submenu label="Ações">
+				<p:menuitem value="Votos" url="http://www.google.com" />
+					<p:menuitem value="Candidatos" url="http://www.hotmail.com" />
+				</p:submenu>
+				<p:submenu label="Configurar" >
+					<p:menuitem value="Usuários" url="http://mail.yahoo.com" />
+					<p:menuitem value="Logout" url="http://mail.yahoo.com" />
+				</p:submenu>
+				
+			</p:menu>
+		</div>
+		<div class="ui-g-9">
+			<div id="conteudo">
+				<ui:insert name="content" />
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

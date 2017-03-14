@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="/templates/master.xhtml">
+
+		<ui:define name="content">
+			<h1>Cadastrar novo usuário</h1>
+			<br />
+			<h:form enctype="multipart/form-data">
+				<h:panelGrid columns="2" cellpadding="5">
+					<p:outputLabel value="Nome: " />
+					<p:inputText id="nome" value="#{usuariosBean.usuario.nome}" />
+					<p:outputLabel value="E-mail: " />
+					<p:inputText id="email" value="" />
+					<p:outputLabel value="Senha: " />
+					<p:password id="senha" value="" feedback="true"
+						promptLabel="Digite uma senha" weakLabel="Esta senha é fraca"
+						goodLabel="Esta é uma boa senha" strongLabel="Senha forte"
+						inline="true" />
+					<p:outputLabel value="Foto: " />
+					<p:fileUpload value="" mode="simple" skinSimple="true" />
+					<p:outputLabel for="console" value="Permissão" />
+					<p:selectOneMenu id="console" value="" style="width:125px">
+						<f:selectItems value="#{usuariosBean.permissoes}" var="permissao"
+							itemValue="permissao.id" itemLabel="permissao.nome" />
+					</p:selectOneMenu>
+					<p:outputLabel value="Código: " />
+					<p:inputText id="codigo" value="" />
+					<p:commandButton value="Cadastrar" icon="ui-icon-check" />
+				</h:panelGrid>
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+</html>
